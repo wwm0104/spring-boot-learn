@@ -47,8 +47,5 @@ public class ApplicationListenerTest implements ApplicationListener<ApplicationE
             ApplicationFailedEvent event = (ApplicationFailedEvent)applicationEvent;
             System.out.println("事件超类:ApplicationFailedEvent"+event.getApplicationContext());
         }
-
-
-
     }
 }

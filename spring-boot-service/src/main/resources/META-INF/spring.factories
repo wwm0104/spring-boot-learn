@@ -1,3 +1,2 @@
 org.springframework.context.ApplicationListener=\
-  com.dragon.myapplication.mylistener.ApplicationListenerTest,\
-  com.dragon.myapplication.mylistener.MyApplicationListener
+  com.dragon.myapplication.mylistener.ApplicationListenerTest

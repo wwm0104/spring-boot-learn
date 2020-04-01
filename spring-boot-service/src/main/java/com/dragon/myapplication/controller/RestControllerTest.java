@@ -1,5 +1,6 @@
 package com.dragon.myapplication.controller;
 
+import com.dragon.myapplication.aop.myannotations.LoginCheck;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,5 +16,11 @@ public class RestControllerTest {
     @GetMapping(value = "/")
     public String method(){
         return "Helle Spring boot";
+    }
+
+    @GetMapping(value = "/method2")
+    @LoginCheck(checkFlag ="你好",mame = "method2")
+    public String method2(){
+        return "Helle Spring boot2";
     }
 }
