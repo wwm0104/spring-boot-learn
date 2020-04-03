@@ -24,6 +24,7 @@ public class Application {
         springApplication.setBannerMode(Banner.Mode.CONSOLE);
         springApplication.addListeners(new MyApplicationListener(),new ApplicationListenerTest());
         springApplication.run(args);*/
+        args=new String[]{"test","tes2"};
 
         SpringApplication.run(Application.class,args);
     }
