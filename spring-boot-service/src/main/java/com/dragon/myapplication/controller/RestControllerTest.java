@@ -1,6 +1,8 @@
 package com.dragon.myapplication.controller;
 
-import com.dragon.myapplication.aop.myannotations.LoginCheck;
+import com.dragon.myapplication.aop.myannotations.LoginCheckTest;
+import com.dragon.service.order.IOrderInter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,16 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version 1.0
  */
 @RestController
-@RequestMapping(value = "spring-boot-test")
+@RequestMapping(value = "test")
+
 public class RestControllerTest {
+    @Autowired
+    private IOrderInter orderInter;
+
     @GetMapping(value = "/")
     public String method(){
-        return "Helle Spring boot";
+        return orderInter.createHYOrder();
     }
 
     @GetMapping(value = "/method2")
-    @LoginCheck(checkFlag ="你好",mame = "method2")
+    @LoginCheckTest(checkFlag = "dest",mame = "ce")
     public String method2(){
-        return "Helle Spring boot2";
+        return orderInter.createPPOrder();
     }
 }

@@ -13,7 +13,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @Date: 2020/3/12 23:06
  * @Version 1.0
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.dragon.*")
 @EnableAspectJAutoProxy
 public class Application {
     public static void main(String[] args) {
