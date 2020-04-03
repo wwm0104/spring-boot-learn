@@ -2,6 +2,7 @@ package com.dragon.service.order.impl;
 
 import com.dragon.service.order.IOrderInter;
 import org.omg.CORBA.PUBLIC_MEMBER;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,11 +11,11 @@ import org.springframework.stereotype.Service;
  * @Version 1.0
  */
 @Service
-
 public class OrderServiceImpl implements IOrderInter {
-
+    @Value("${my.uuid}")
+    private String name;
     public String createPPOrder() {
-        return "接口方法:createPPOrder";
+        return "接口方法:createPPOrder;"+name;
     }
 
     public String createHYOrder() {
