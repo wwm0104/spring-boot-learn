@@ -1,11 +1,12 @@
 package com.dragon.myapplication.controller;
 
+import com.dragon.myapplication.aop.TestException;
 import com.dragon.myapplication.aop.myannotations.LoginCheckTest;
 import com.dragon.service.order.IOrderInter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author: weiwanmin
@@ -14,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "test")
-
 public class RestControllerTest {
     @Autowired
     private IOrderInter orderInter;
 
     @GetMapping(value = "/")
     public String method(){
-        return orderInter.createHYOrder();
+        throw  new TestException();
+       // return orderInter.createHYOrder();
     }
 
     @GetMapping(value = "/method2")
