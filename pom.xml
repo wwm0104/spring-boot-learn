@@ -13,7 +13,7 @@
         <module>spring-boot-service</module>
     </modules>
     <properties>
-        <fastjson-verison>1.2.66</fastjson-verison>
+        <fastjson-verison>1.2.83</fastjson-verison>
         <lombok-version>1.18.10</lombok-version>
         <gson-version>2.2.4</gson-version>
     </properties>
